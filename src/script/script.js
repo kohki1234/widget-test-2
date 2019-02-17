@@ -18,7 +18,7 @@ function clickEvent(){
 };
 
 
-function init() {
+function initEvent() {
     var notificationHandler = function(data) {
         // Do something with the notifications
     };
