@@ -20,7 +20,13 @@ function clickEvent(){
     var data = {text: "This is widget test for launcing text from widget"};
 
 
-    lpTag.agentSDK.init({notificationCallback: notificationHandler});
+    
 
     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 };
+
+
+function init() {
+    lpTag.agentSDK.init({notificationCallback: notificationHandler});
+    console.log("The init() fuction was called here and cleaned, ready to launch text")
+}
