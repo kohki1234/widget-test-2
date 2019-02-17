@@ -26,55 +26,22 @@ function sendSc() {
         // called when the command is completed successfully,
         // or when the action terminated with an error.
     };
-
-    var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+    var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
     var data = {
-      text: "Some text",
-      quickReplies: {
-        "type": "quickReplies",
-        "itemsPerRow": 8,
-        "replies": [
-          {
-            "type": "button",
-            "tooltip": "yes i do",
-            "title": "yes",
-            "click": {
-              "actions": [
-                {
-                  "type": "publishText",
-                  "text": "yep"
-                }
-              ],
-              "metadata": [
-                {
-                  "type": "ExternalId",
-                  "id": "Yes-1234"
-                }
-              ]
-            }
-          },
-          {
-            "type": "button",
-            "tooltip": "No!",
-            "title": "No!",
-            "click": {
-              "actions": [
-                {
-                  "type": "publishText",
-                  "text": "No!"
-                }
-              ],
-              "metadata": [
-                {
-                  "type": "ExternalId",
-                  "id": "No-4321"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    };
+		json: {
+			"type": "text",
+			"text": "product name",
+			"tooltip": "text tooltip",
+			"style": {
+				"bold": true,
+				"size": "large"
+			}
+		},
+		metadata: [	//metadata is optional
+			{"type":"ExternalId","id":"running364"},
+			{"type":"ExternalId","id":"soccer486"}
+		]
+	};
 
     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 }
