@@ -17,7 +17,7 @@ function clickEvent(){
     };
 
     var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
-    var data = {text: "Some text"};
+    var data = {text: "This is widget test for launcing text from widget"};
 
 
     lpTag.agentSDK.init({notificationCallback: notificationHandler});
