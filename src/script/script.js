@@ -26,3 +26,21 @@ function initEvent() {
     lpTag.agentSDK.init({notificationCallback: notificationHandler});
     console.log("The init() fuction was called here and cleaned, ready to launch text")
 }
+
+
+function getInfo() {
+    var onSuccess = function(data) {
+        // Do something with the returning data
+    };
+
+    var onError = function(err) {
+        // Do something with the error
+    };
+    
+    console.log("get info is called");
+
+    var pathToData = "visitorInfo.visitorName";
+
+    lpTag.agentSDK.get(pathToData, onSuccess, onError);
+
+}
