@@ -1,6 +1,6 @@
 
 
-function clickEvent(){
+function sendText(){
     console.log("TEST");
 
     var notifyWhenDone = function(err) {
@@ -12,10 +12,72 @@ function clickEvent(){
     };
 
     var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
-    var data = {text: "This is widget test for launcing text from widget"};
+    var data = {text: "Some text"};
 
     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
 };
+
+function sendSc() {
+    console.log("send SC was called ")
+    var notifyWhenDone = function(err) {
+        if (err) {
+            // Do something with the error
+        }
+        // called when the command is completed successfully,
+        // or when the action terminated with an error.
+    };
+
+    var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+    var data = {
+      text: "Some text",
+      quickReplies: {
+        "type": "quickReplies",
+        "itemsPerRow": 8,
+        "replies": [
+          {
+            "type": "button",
+            "tooltip": "yes i do",
+            "title": "yes",
+            "click": {
+              "actions": [
+                {
+                  "type": "publishText",
+                  "text": "yep"
+                }
+              ],
+              "metadata": [
+                {
+                  "type": "ExternalId",
+                  "id": "Yes-1234"
+                }
+              ]
+            }
+          },
+          {
+            "type": "button",
+            "tooltip": "No!",
+            "title": "No!",
+            "click": {
+              "actions": [
+                {
+                  "type": "publishText",
+                  "text": "No!"
+                }
+              ],
+              "metadata": [
+                {
+                  "type": "ExternalId",
+                  "id": "No-4321"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    };
+
+    lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+}
 
 
 function initEvent() {
