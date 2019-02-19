@@ -13,12 +13,21 @@
     
     <br>
     <hr>
-    <button onclick="sendText()"> Send plain text button </button>
+    <button id="textButton" onclick="sendText()"> Send plain text button </button>
     <br>
-    <button onclick="sendSc()"> Send Structured content button </button>
+    <button id="SCButton" onclick="sendSc()"> Send Structured content button </button>
     <br>
 
     <br>
     <button onclick="getInfo()">Get agent's information </button>
+
+    <br>
+    <hr>
+    <div>
+      For debugging : error message
+      <h2 id="debugMessage"> </h2>
+    </div>
+
+
   </body>
 </html>

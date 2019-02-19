@@ -1,11 +1,15 @@
 
 
 function sendText(){
-    console.log("TEST");
+    console.log("sendText() is called here ");
 
     var notifyWhenDone = function(err) {
         if (err) {
-            // Do something with the error
+            $(function() {
+                $("#textButton").click(function(){
+                  $("#debugMessage").text("send Text failed... reason : " + err);
+                });
+              });
         }
         // called when the command is completed successfully,
         // or when the action terminated with an error.
@@ -15,17 +19,25 @@ function sendText(){
     var data = {text: "Some text"};
 
     lpTag.agentSDK.command(cmdName, data, notifyWhenDone);
+
+
 };
 
 function sendSc() {
     console.log("send SC was called ")
+
     var notifyWhenDone = function(err) {
         if (err) {
-            // Do something with the error
+            $(function() {
+                $("#SCButton").click(function(){
+                  $("#debugMessage").text("sendSC failed... reason : " + err);
+                });
+              });
         }
         // called when the command is completed successfully,
         // or when the action terminated with an error.
     };
+
     var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
     var data = {
 		json: {
