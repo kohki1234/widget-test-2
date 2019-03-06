@@ -1,5 +1,23 @@
 
 
+
+// SelectAll method
+function selectAll() {
+  document.form.gaiyou.select();
+}
+
+function resetText () {
+  var resetTargetText = document.getElementById("gaiyou");
+
+  if (resetTargetText.value == '') {
+    // do something
+  } else {
+    resetTargetText.value = '';
+  }
+}
+
+
+// This is method to send text to the user
 function sendText(){
     console.log("sendText() is called here ");
 
@@ -23,6 +41,8 @@ function sendText(){
 
 };
 
+
+//This is method to send SC from widget
 function sendSc() {
     console.log("send SC was called ")
 
