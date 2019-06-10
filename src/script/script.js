@@ -1,5 +1,12 @@
 
 
+// Open new window
+function onClick() {
+  console.log('new window is being opened...')
+  window.open("http://www.cnblogs.com/liumengdie/","_blank", 'width=800,height=600');   
+}
+
+   
 
 // SelectAll method
 function selectAll() {
